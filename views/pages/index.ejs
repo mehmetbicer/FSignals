@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.min.css">
+<meta http-equiv="refresh" content="5">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   
+  
+  
+  <div class="container">
+
+   
+    
+    <div class="row" >
+    <% for(var i=0; i
+    < para.length; i++) { %>
+    <div class="col-sm-2  btn <%= para[i].renk %>" style="margin:2px">
+      <span>
+       <a class="btn <%= para[i].renk %>" href="https://www.binance.com/en/futures/<%= para[i].name %>" role="button" target="_blank"><%= para[i].name %></a>
+      </span><span class="glyphicon glyphicon-<%= para[i].status1 %>"></span></br>
+      <span>%
+        <%= para[i].hacim %>
+      </span>
+    </div>
+    <% } %>
+  </div>
+  </div>
+
+  
+
+  
