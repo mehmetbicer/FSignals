@@ -10,7 +10,7 @@ const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 //---------PARAMETRE ALANI---------------
-var param_ ="5m";
+var param_ ="1m";
 var zamanlama_ = 15000;
 var __recvWindow = 50000;
 //---------OTOMATIK ALANLAR--------------
@@ -167,7 +167,7 @@ function Kontrols(item) {
                     oran__ = parseFloat(oran__ - 100 );
                 }
 
-                if(parseFloat(oran__) > 0){
+                if(parseFloat(oran__) > 24 && parseFloat(son_bar_close) > parseFloat(en_yuksek) && parseFloat(son_bar_close) > parseFloat(son_bar_open) ){
 
                         // console.log(item + ";" + parseFloat(son_bar_close).toFixed(8) + ";" + parseFloat(en_yuksek).toFixed(8) + ";" + parseFloat(son_bar_vol).toFixed(0) + ";" + parseFloat(toplam_hacim / 7).toFixed(0) + ";" +  parseFloat(toplam_hacim).toFixed(0) );
                     
