@@ -10,7 +10,7 @@ const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 //---------PARAMETRE ALANI---------------
-var param_ ="5m";
+var param_ ="15m";
 var zamanlama_ = 10000;
 var __recvWindow = 50000;
 //---------OTOMATIK ALANLAR--------------
@@ -90,7 +90,7 @@ function ParaBul(){
 //'url': 'https://api.binance.com/api/v3/klines?' + deger_ ,
 
 function Kontrols(item) {
-    var limit_ = 7;
+    var limit_ = 8;
     var t_zaman = Date.now();
     var deger_ = "symbol="+ item  + "&interval=" + param_  + "&limit="  + limit_ + "&endTime=" + t_zaman 
     var request = require('request');
@@ -164,7 +164,7 @@ function Kontrols(item) {
                     oran__ = parseFloat(oran__ - 100 );
                 }
 
-                if(parseFloat(oran__) > 24 &&  parseFloat(hac_oran) > 49 && parseFloat(son_bar_close) > parseFloat(son_bar_open) ){
+                if(parseFloat(oran__) > 24 && parseFloat(son_bar_close) > parseFloat(son_bar_open) ){
                         // console.log(item + ";" + parseFloat(son_bar_close).toFixed(8) + ";" + parseFloat(en_yuksek).toFixed(8) + ";" + parseFloat(son_bar_vol).toFixed(0) + ";" + parseFloat(toplam_hacim / 7).toFixed(0) + ";" +  parseFloat(toplam_hacim).toFixed(0) );
                         //console.log(item + " " + parseFloat(oran__).toFixed(2) );
                         //console.log("-----------------------------------------------------------");
